@@ -1,0 +1,159 @@
+<!-- Navigation bar -->
+<div class="container-fluid">
+  <div class="row">
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-dark"
+      style="background-color: #0d0d0d; padding-top: .5rem; padding-bottom: .5rem; padding-left: 12px; padding-right: 12px;"
+    >
+      <div class="container-fluid" style="padding-left: 24px; padding-right: 24px;">
+        <a class="navbar-brand" routerLink="/books/list">Bookly</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a
+                i18n
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Books</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" routerLink="/books/list">List</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/books/create">Create</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                i18n
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Authors
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" routerLink="/authors/list">List</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/authors/create"
+                    >Create</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                i18n
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Editorials</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" routerLink="/editorials/list"
+                    >List</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/editorials/create"
+                    >Create</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Main Router Outlet -->
+  <div class="row" id="principal">
+    <div class="row main-text bg-dark h-100">
+      <div class="col-md-3">
+        <div class="row sticky-top">
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-md-12 text-center">
+              <h2>Explore our books!</h2>
+            </div>
+          </div>
+          <div class="row">
+            <br />
+            <br />
+            <br />
+            <div class="col-md-12">
+              <img
+                class="img-fluid mx-auto d-block"
+                src="../assets/booksIcon.png"
+                alt="icon"
+              />
+              <div class="col-md-12 text-center">
+                <h3>
+                  Enjoy our marvelous collection, handpicked just for you.
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <footer
+      class="page-footer font-small blue pt-4"
+      style="background-color: #0d0d0d"
+    >
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-12 mt-md-0 mt-3">
+            <!-- Content -->
+            <h6 class="text-uppercase">Bookstore</h6>
+            <p class="text-muted">Sample front-end project for ISIS2603.</p>
+          </div>
+        </div>
+        <!-- Grid row -->
+      </div>
+    </footer>
+  </div>
+</div>
