@@ -20,12 +20,14 @@
         </dl>
         <p class="h3">Books by this author:</p>
         <ul>
-          <li
-            *ngFor="let book of authorDetail?.books"
+          @for (book of authorDetail?.books; track book) {
+<li
+           
             routerLink="/books/{{ book.id }}"
           >
             {{ book.name }}
           </li>
+}
         </ul>
       </div>
     </div>

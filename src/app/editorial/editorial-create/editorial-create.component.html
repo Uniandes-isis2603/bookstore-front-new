@@ -14,15 +14,17 @@
         placeholder="Editorial Name"
       />
     </div>
-    <div
-      class="alert alert-danger alert-dismissible fade show"
-      *ngIf="
+    @if (
         editorialForm.get('name')?.hasError('required') &&
         editorialForm.get('name')?.touched
-      "
+      ) {
+<div
+      class="alert alert-danger alert-dismissible fade show"
+     
     >
       Name required
     </div>
+}
 
     <div class="form-group mx-sm-3 mb-2" style="margin-top: 15px;">
       <button

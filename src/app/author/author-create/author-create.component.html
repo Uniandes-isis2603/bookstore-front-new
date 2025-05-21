@@ -14,21 +14,25 @@
         formControlName="name"
         placeholder="Author's name"
       />
-      <div
-        class="alert alert-danger alert-dismissible fade show"
-        *ngIf="
+      @if (
           authorForm.get('name')!.hasError('required') &&
           authorForm.get('name')!.touched
-        "
+        ) {
+<div
+        class="alert alert-danger alert-dismissible fade show"
+       
       >
         Name required
       </div>
-      <div
+}
+      @if (authorForm.get('name')!.hasError('minlength')) {
+<div
         class="alert alert-danger alert-dismissible fade show"
-        *ngIf="authorForm.get('name')!.hasError('minlength')"
+       
       >
         Name too short
       </div>
+}
     </div>
 
     <!--Image-->
@@ -41,15 +45,17 @@
         formControlName="image"
         placeholder="URL with Author's image"
       />
-      <div
-        class="alert alert-danger alert-dismissible fade show"
-        *ngIf="
+      @if (
           authorForm.get('image')!.hasError('required') &&
           authorForm.get('image')!.touched
-        "
+        ) {
+<div
+        class="alert alert-danger alert-dismissible fade show"
+       
       >
         Image required
       </div>
+}
     </div>
 
     <!--Birth Date-->
@@ -63,15 +69,17 @@
         placeholder="Author's birth date"
         type="date"
       />
-      <div
-        class="alert alert-danger alert-dismissible fade show"
-        *ngIf="
+      @if (
           authorForm.get('birthDate')!.hasError('required') &&
           authorForm.get('birthDate')!.touched
-        "
+        ) {
+<div
+        class="alert alert-danger alert-dismissible fade show"
+       
       >
         Birth date required
       </div>
+}
     </div>
 
     <!--Description-->
@@ -84,21 +92,25 @@
         formControlName="description"
         placeholder="Author's short description"
       />
-      <div
-        class="alert alert-danger alert-dismissible fade show"
-        *ngIf="
+      @if (
           authorForm.get('description')!.hasError('required') &&
           authorForm.get('description')!.touched
-        "
+        ) {
+<div
+        class="alert alert-danger alert-dismissible fade show"
+       
       >
         Description required
       </div>
-      <div
+}
+      @if (authorForm.get('description')!.hasError('maxlength')) {
+<div
         class="alert alert-danger alert-dismissible fade show"
-        *ngIf="authorForm.get('description')!.hasError('maxlength')"
+       
       >
         Description too long
       </div>
+}
     </div>
 
     <div class="form-group mx-sm-3 mb-2" style="margin-top: 15px;">

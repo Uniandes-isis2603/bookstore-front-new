@@ -11,15 +11,17 @@
         placeholder="Book Name"
       />
     </div>
-    <div
-      class="alert alert-danger alert-dismissible fade show"
-      *ngIf="
+    @if (
         bookForm.get('name')?.hasError('required') &&
         bookForm.get('name')?.touched
-      "
+      ) {
+<div
+      class="alert alert-danger alert-dismissible fade show"
+     
     >
       Name required
     </div>
+}
 
     <div class="form-group mx-sm-3 mb-2">
       <label for="authors"> Author </label>
@@ -30,18 +32,22 @@
         formControlName="authors"
       >
         <option value="">Select the author</option>
-        <option [value]="a.id" *ngFor="let a of authors">{{ a.name }}</option>
+        @for (a of authors; track a) {
+<option [value]="a.id">{{ a.name }}</option>
+}
       </select>
     </div>
-    <div
-      class="alert alert-danger alert-dismissible fade show"
-      *ngIf="
+    @if (
         bookForm.get('authors')?.hasError('required') &&
         bookForm.get('authors')?.touched
-      "
+      ) {
+<div
+      class="alert alert-danger alert-dismissible fade show"
+     
     >
       Author required
     </div>
+}
 
     <div class="form-group mx-sm-3 mb-2">
       <label for="publishingDate"> Publishing Date </label>
@@ -53,15 +59,17 @@
         placeholder="Book Publish Date"
       />
     </div>
-    <div
-      class="alert alert-danger alert-dismissible fade show"
-      *ngIf="
+    @if (
         bookForm.get('publishingDate')?.hasError('required') &&
         bookForm.get('publishingDate')?.touched
-      "
+      ) {
+<div
+      class="alert alert-danger alert-dismissible fade show"
+     
     >
       Date required
     </div>
+}
 
     <div class="form-group mx-sm-3 mb-2">
       <label for="description"> Description </label>
@@ -73,15 +81,17 @@
         placeholder="Book Description"
       />
     </div>
-    <div
-      class="alert alert-danger alert-dismissible fade show"
-      *ngIf="
+    @if (
         bookForm.get('description')?.hasError('required') &&
         bookForm.get('description')?.touched
-      "
+      ) {
+<div
+      class="alert alert-danger alert-dismissible fade show"
+     
     >
       Description required
     </div>
+}
 
     <div class="form-group mx-sm-3 mb-2">
       <label for="isbn"> ISBN </label>
@@ -93,15 +103,17 @@
         placeholder="Book ISBN"
       />
     </div>
-    <div
-      class="alert alert-danger alert-dismissible fade show"
-      *ngIf="
+    @if (
         bookForm.get('isbn')?.hasError('required') &&
         bookForm.get('isbn')?.touched
-      "
+      ) {
+<div
+      class="alert alert-danger alert-dismissible fade show"
+     
     >
       ISBN required
     </div>
+}
 
     <div class="form-group mx-sm-3 mb-2">
       <label for="image"> Image (URL) </label>
@@ -113,32 +125,38 @@
         placeholder="Book Image"
       />
     </div>
-    <div
-      class="alert alert-danger alert-dismissible fade show"
-      *ngIf="
+    @if (
         bookForm.get('image')?.hasError('required') &&
         bookForm.get('image')?.touched
-      "
+      ) {
+<div
+      class="alert alert-danger alert-dismissible fade show"
+     
     >
       Image required
     </div>
+}
 
     <div class="form-group mx-sm-3 mb-2">
       <label for="editorial"> Editorial </label>
       <select class="form-control" id="editorial" formControlName="editorial">
         <option value="">Select the editorial</option>
-        <option [ngValue]="e" *ngFor="let e of editorials">{{ e.name }}</option>
+        @for (e of editorials; track e) {
+<option [ngValue]="e">{{ e.name }}</option>
+}
       </select>
     </div>
-    <div
-      class="alert alert-danger alert-dismissible fade show"
-      *ngIf="
+    @if (
         bookForm.get('editorial')?.hasError('required') &&
         bookForm.get('editorial')?.touched
-      "
+      ) {
+<div
+      class="alert alert-danger alert-dismissible fade show"
+     
     >
       Editorial required
     </div>
+}
 
     <div class="form-group mx-sm-3 mb-2" style="margin-bottom: 30px !important; margin-top: 15px;">
       <button type="button" class="btn btn-primary" [disabled]="bookForm.invalid" style="margin-right: 10px;">
